@@ -77,7 +77,7 @@ class DashboardUser extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "Selamat Bergabung, Username!",
+                    "Selamat Datang, Username!",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 22,
