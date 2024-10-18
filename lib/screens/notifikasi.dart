@@ -35,9 +35,6 @@ class Notifikasi extends StatelessWidget {
           );
           },
         ),
-        actions: [
-          Icon(Icons.notifications, color: Color(0xffffffff), size: 24),
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

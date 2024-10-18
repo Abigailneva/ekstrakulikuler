@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/dashboard.dart';
 import 'package:my_app/screens/preview.dart';
 
 class FromPendaftaran extends StatelessWidget {
@@ -225,7 +226,10 @@ class FromPendaftaran extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardUser()),
+                            );
+                          },
                           color: Color(0xff000000),
                           elevation: 0,
                           shape: RoundedRectangleBorder(

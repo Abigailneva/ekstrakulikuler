@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/from_pindah.dart';
 import 'package:my_app/screens/login.dart';
 import 'package:my_app/screens/notifikasi.dart';
 import 'package:my_app/screens/preview.dart';
@@ -58,6 +59,13 @@ class DashboardUser extends StatelessWidget {
               title: Text('Logout'),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+              },
+            ),
+             ListTile(
+              leading: Icon(Icons.swap_horiz),
+              title: Text('Pindah Eskul'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FromPindah()));
               },
             ),
           ],
