@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/dashboard.dart';
 
 class Notifikasi extends StatelessWidget {
   @override
@@ -28,8 +29,10 @@ class Notifikasi extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Color(0xffffffff), size: 24),
           onPressed: () {
-            // Kembali ke halaman Dashboard
-            Navigator.pop(context);
+           Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DashboardUser()),
+          );
           },
         ),
         actions: [

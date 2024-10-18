@@ -1,10 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/login.dart';
 import 'package:my_app/screens/notifikasi.dart';
+import 'package:my_app/screens/preview.dart';
 
 class DashboardUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+           DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xff298ec3),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+               
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage('assets/images/logo-bn.png'), 
+                  ),
+                  SizedBox(height: 10),
+                  // Text
+                  Text(
+                    'Selamat datang, User!',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'Ekstrakulikuler SMK BN',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+             ),
+      
+            ListTile(
+              leading: Icon(Icons.preview),
+              title: Text('Preview'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Preview()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+              },
+            ),
+          ],
+        ),
+      ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
@@ -20,7 +78,7 @@ class DashboardUser extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              // AppBar
+             
               AppBar(
                 elevation: 4,
                 centerTitle: false,
@@ -40,20 +98,25 @@ class DashboardUser extends StatelessWidget {
                     color: Color(0xffffffff),
                   ),
                 ),
-                leading: Icon(
-                  Icons.menu,
-                  color: Color(0xffffffff),
-                  size: 24,
+                leading: Builder(
+                  builder: (context) {
+                    return IconButton(
+                      icon: Icon(Icons.menu, color: Color(0xffffffff), size: 24),
+                      onPressed: () {
+                        Scaffold.of(context).openDrawer();
+                      },
+                    );
+                  },
                 ),
                 actions: [
                   IconButton(
-                   icon: Icon(Icons.notifications, color: Color(0xffffffff), size: 24),
-                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>Notifikasi()), 
-                    );
-                   },
+                    icon: Icon(Icons.notifications, color: Color(0xffffffff), size: 24),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Notifikasi()),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -105,11 +168,11 @@ class DashboardUser extends StatelessWidget {
               SizedBox(height: 20),
 
               // Daftar Ekstrakurikuler
-            Padding(
+              Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   children: [
-                    SizedBox(height: 15), 
+                    SizedBox(height: 15),
                     Text(
                       "Ekstrakurikuler yang Tersedia",
                       style: TextStyle(
