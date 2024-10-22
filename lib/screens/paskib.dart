@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/from_pendaftaran.dart';
 import 'package:my_app/screens/preview.dart';
 
 class Paskibra extends StatelessWidget {
@@ -98,31 +97,6 @@ class Paskibra extends StatelessWidget {
               SizedBox(height: 20),
               // Daftar poin tentang kegiatan paskibra
               _buildPaskibraPoints(),
-              SizedBox(height: 20),
-              // Tombol daftar yang responsif
-               MaterialButton(
-               onPressed: () {
-                 Navigator.push(
-                   context,
-                   MaterialPageRoute(builder: (context) => FromPendaftaran()), 
-                 );
-               },
-               color: Color(0xff2991c6),
-               elevation: 0,
-               shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular(8.0),
-                 side: BorderSide(color: Color(0xff808080), width: 1),
-               ),
-               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-               child: Text(
-                 "Daftar",
-                 style: TextStyle(
-                   fontSize: 16,
-                   fontWeight: FontWeight.w500,
-                   color: Colors.white,
-                 ),
-               ),
-              ),
             ],
           ),
         ),

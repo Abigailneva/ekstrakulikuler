@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/from_pindah.dart';
+import 'package:my_app/screens/halaman_pendaftaran.dart';
 import 'package:my_app/screens/login.dart';
 import 'package:my_app/screens/notifikasi.dart';
 import 'package:my_app/screens/preview.dart';
@@ -48,24 +49,38 @@ class DashboardUser extends StatelessWidget {
       
             ListTile(
               leading: Icon(Icons.preview),
-              title: Text('Preview'),
+              title: Text('Pengenalan Eskul'),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Preview()),
                 );
               },
             ),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
+              leading:Icon(Icons.person_add),
+              title: Text('Daftar Eskul'),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
-              },
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PendaftaranEskulPage()),
+                );
+              }
             ),
              ListTile(
               leading: Icon(Icons.swap_horiz),
               title: Text('Pindah Eskul'),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => FromPindah()));
+              },
+            ),
+           ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              onTap: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Login(userType: 'Siswa'), 
+              ),
+              );
+
               },
             ),
           ],

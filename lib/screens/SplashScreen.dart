@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/login.dart';
+import 'package:my_app/screens/pilihan.dart';
 
 class SplashScreen extends StatelessWidget {
 const SplashScreen({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ const SplashScreen({Key? key}) : super(key: key);
   Future.delayed(Duration(seconds: 3)).then((value) {
   Navigator.of(context).pushAndRemoveUntil(
   MaterialPageRoute(
-    builder: (context) => Login(),), (Route) => false);
+    builder: (context) => Pilihan(),), (Route) => false);
     });
 
     return Scaffold(

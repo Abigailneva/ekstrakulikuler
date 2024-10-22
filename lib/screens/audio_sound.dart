@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/from_pendaftaran.dart';
 import 'package:my_app/screens/preview.dart';
 
 class AudioSound extends StatelessWidget {
@@ -58,7 +57,7 @@ class AudioSound extends StatelessWidget {
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 7,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: Offset(0, 3), 
                     ),
                   ],
                 ),
@@ -71,7 +70,7 @@ class AudioSound extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              // Text judul yang lebih besar dan menarik
+              
               Text(
                 "Audio Sound",
                 textAlign: TextAlign.center,
@@ -98,31 +97,6 @@ class AudioSound extends StatelessWidget {
               SizedBox(height: 20),
               // Daftar poin tentang kegiatan audio sound
               _buildAudioSoundPoints(),
-              SizedBox(height: 20),
-              // Tombol daftar yang responsif
-              MaterialButton(
-               onPressed: () {
-                 Navigator.push(
-                   context,
-                   MaterialPageRoute(builder: (context) => FromPendaftaran()), 
-                 );
-               },
-               color: Color(0xff2991c6),
-               elevation: 0,
-               shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular(8.0),
-                 side: BorderSide(color: Color(0xff808080), width: 1),
-               ),
-               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-               child: Text(
-                 "Daftar",
-                 style: TextStyle(
-                   fontSize: 16,
-                   fontWeight: FontWeight.w500,
-                   color: Colors.white,
-                 ),
-               ),
-              ),
             ],
           ),
         ),
@@ -144,7 +118,7 @@ class AudioSound extends StatelessWidget {
     );
   }
 
-  // Fungsi untuk menampilkan item poin tanpa ikon
+  
   Widget _buildPointItem(String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 16.0),

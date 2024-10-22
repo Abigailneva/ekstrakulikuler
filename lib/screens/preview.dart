@@ -12,7 +12,6 @@ class Preview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: Color(0xffffffff),
       appBar: AppBar(

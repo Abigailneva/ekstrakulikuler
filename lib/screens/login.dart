@@ -6,12 +6,29 @@ import 'package:my_app/screens/dashboard.dart';
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
+
+  final String userType;
+  Login({required this.userType});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Login sebagai $userType'),
+      ),
+      body: Center(
+        child: Text('Selamat datang $userType!'),
+      ),
+    );
+  }
 }
+  
 
 class _LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _isPasswordVisible = false; // untuk mengatur visibilitas password
+  
 
   @override
   Widget build(BuildContext context) {
