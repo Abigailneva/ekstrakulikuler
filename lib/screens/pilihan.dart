@@ -5,14 +5,8 @@ class Pilihan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.blue.shade100, Colors.white],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+      body: Container( 
+        color: Colors.white,
         child: Center( 
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -23,7 +17,7 @@ class Pilihan extends StatelessWidget {
               children: [
              
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30.0),
+                  padding: const EdgeInsets.only(bottom: 70.0),
                   child: ClipOval(
                     child: Image.asset(
                       'assets/images/logo-bn.png', 
@@ -35,14 +29,14 @@ class Pilihan extends StatelessWidget {
                 ),
                 
                 Text(
-                  "Pilih Peran Anda",
+                  "Peran Anda di Ekstra SMK BN",
                   style: TextStyle(
-                    fontSize: 28,
+                    fontSize: 22,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),
                 ),
-                SizedBox(height: 30), 
+                SizedBox(height: 20), 
 
             
                 ElevatedButton(
@@ -55,8 +49,8 @@ class Pilihan extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  backgroundColor: Color(0xFF78C1F3),
+                    padding: EdgeInsets.symmetric(horizontal: 135, vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
                     ),
@@ -80,8 +74,8 @@ class Pilihan extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueAccent,
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                    backgroundColor: Color(0xFF50D890),
+                    padding: EdgeInsets.symmetric(horizontal: 130, vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
                     ),
