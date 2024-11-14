@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class DashboardUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+  final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         elevation: 4,
@@ -19,27 +21,27 @@ class DashboardUser extends StatelessWidget {
           "EKSTRAKULIKULER BN",
           style: TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: 20,
+            fontSize: screenWidth *0.05,
             color: Color(0xffffffff),
           ),
         ),
         leading: IconButton(
-          icon: Icon(Icons.menu, color: Colors.white),
+          icon: Icon(Icons.menu, color: Colors.white, size: screenWidth * 0.07),
           onPressed: () {
             Scaffold.of(context).openDrawer();
           },
         ),
         actions: [
-          Icon(Icons.notifications, color: Colors.white),
+          Icon(Icons.notifications, color: Colors.white, size: screenWidth * 0.07),
         ],
       ),
 
-      // Sidebar (Drawer)
+
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            // Drawer Header
+   
             DrawerHeader(
               decoration: BoxDecoration(
                 color: Color(0xff298ec3),
@@ -48,36 +50,46 @@ class DashboardUser extends StatelessWidget {
                 'Menu',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 24,
+                  fontSize: screenWidth * 0.06,
                 ),
               ),
             ),
 
-            // Menu List Items
-            ListTile(
-              leading: Icon(Icons.preview),
-              title: Text('Preview'),
+          
+           ListTile(
+              leading: Icon(Icons.preview, size: screenWidth * 0.07),
+              title: Text(
+                'Preview',
+                style: TextStyle(fontSize: screenWidth * 0.045),
+              ),
               onTap: () {
-                // Aksi saat "Preview" ditekan
-                Navigator.pop(context); // Menutup Drawer
-                // Tambahkan kode navigasi atau logika lainnya di sini
+                Navigator.pop(context);
+               
               },
             ),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
+              leading: Icon(Icons.logout, size: screenWidth * 0.07),
+              title: Text(
+                'Logout',
+                style: TextStyle(fontSize: screenWidth * 0.045),
+              ),
               onTap: () {
-                // Aksi saat "Logout" ditekan
-                Navigator.pop(context); // Menutup Drawer
-                // Tambahkan kode navigasi atau logika lainnya di sini
+
+                Navigator.pop(context); 
               },
             ),
           ],
         ),
       ),
 
-      body: Center(
-        child: Text("Dashboard User"),
+        body: Center(
+        child: Text(
+          "Dashboard User",
+          style: TextStyle(
+            fontSize: screenWidth * 0.06, 
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ),
     );
   }

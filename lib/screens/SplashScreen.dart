@@ -6,6 +6,9 @@ const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+  double screenWidth = MediaQuery.of(context).size.width;
+  double screenHeight = MediaQuery.of(context).size.height;
+
   Future.delayed(Duration(seconds: 3)).then((value) {
   Navigator.of(context).pushAndRemoveUntil(
   MaterialPageRoute(
@@ -15,8 +18,8 @@ const SplashScreen({Key? key}) : super(key: key);
     return Scaffold(
       backgroundColor: Color(0xffffffff),
       body: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        height: screenHeight,
+        width: screenWidth,
         child: Stack(
           alignment: Alignment.topLeft,
           children: [
@@ -32,7 +35,7 @@ const SplashScreen({Key? key}) : super(key: key);
                 border: Border.all(color: Color(0x4d9e9e9e), width: 1),
               ),
               child: Padding(
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(screenWidth * 0.05),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,12 +43,13 @@ const SplashScreen({Key? key}) : super(key: key);
                   children: [
                     Image(
                       image: AssetImage("assets/images/logo-bn.png"),
-                      height: 160,
-                      width: 160,
+                      height: screenHeight * 0.2,
+                      width: screenWidth * 0.4,
                       fit: BoxFit.cover,
                     ),
+                    SizedBox(height: screenHeight * 0.02),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(0, 16, 0, 0),
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.02 , 0, 0),
                       child: Text(
                         "EKSTRAKULIKULER",
                         textAlign: TextAlign.start,
@@ -53,7 +57,7 @@ const SplashScreen({Key? key}) : super(key: key);
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontStyle: FontStyle.normal,
-                          fontSize: 22,
+                          fontSize: screenWidth * 0.06,
                           color: Color(0xff000000),
                         ),
                       ),
@@ -65,7 +69,7 @@ const SplashScreen({Key? key}) : super(key: key);
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
-                        fontSize: 14,
+                        fontSize: screenWidth * 0.04,
                         color: Color(0xff2a92c7),
                       ),
                     ),

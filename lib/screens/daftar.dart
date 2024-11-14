@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/dashboard.dart';
+
 
 class Daftar extends StatefulWidget {
   @override
@@ -7,13 +9,11 @@ class Daftar extends StatefulWidget {
 }
 
 class _DaftarState extends State<Daftar> {
-  // Controller untuk setiap TextField
   final TextEditingController _namaController = TextEditingController();
   final TextEditingController _kelasController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  // Untuk mengatur visibilitas password
   bool _isPasswordVisible = false;
 
   @override
@@ -122,7 +122,6 @@ class _DaftarState extends State<Daftar> {
                         padding: EdgeInsets.fromLTRB(0, 18, 0, 0),
                         child: MaterialButton(
                           onPressed: () {
-                            // Navigasi ke halaman Dashboard
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => DashboardUser()), 

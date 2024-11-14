@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/audio_sound.dart';
+import 'package:my_app/screens/basket.dart';
 import 'package:my_app/screens/from_pindah.dart';
+import 'package:my_app/screens/futsal.dart';
 import 'package:my_app/screens/halaman_pendaftaran.dart';
 import 'package:my_app/screens/login.dart';
 import 'package:my_app/screens/notifikasi.dart';
+import 'package:my_app/screens/padus.dart';
+import 'package:my_app/screens/paskib.dart';
+import 'package:my_app/screens/pmr.dart';
 import 'package:my_app/screens/preview.dart';
+import 'package:my_app/screens/voli.dart';
 
 class DashboardUser extends StatelessWidget {
   @override
@@ -46,7 +53,16 @@ class DashboardUser extends StatelessWidget {
                 ],
               ),
              ),
-      
+
+              ListTile(
+              leading: Icon(Icons.dashboard),
+              title: Text('Dashboard'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardUser()),
+                );
+              },
+            ),
+
             ListTile(
               leading: Icon(Icons.preview),
               title: Text('Pengenalan Eskul'),
@@ -92,7 +108,7 @@ class DashboardUser extends StatelessWidget {
           gradient: LinearGradient(
             colors: [
               Color(0xffe6e6e6),
-              Color(0xffcfe9f4),
+              Color.fromARGB(255, 255, 255, 255),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -118,7 +134,7 @@ class DashboardUser extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
-                    color: Color(0xffffffff),
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 leading: Builder(
@@ -215,13 +231,13 @@ class DashboardUser extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    _buildExtracurricularCard("Basket", "assets/images/basket.jpg"),
-                    _buildExtracurricularCard("Voli", "assets/images/voli.jpg"),
-                    _buildExtracurricularCard("PMR", "assets/images/pmr.jpg"),
-                    _buildExtracurricularCard("Paduan Suara", "assets/images/padus.jpg"),
-                    _buildExtracurricularCard("Paskibra", "assets/images/paskibra.jpg"),
-                    _buildExtracurricularCard("Audio Sound", "assets/images/audio-sound.jpg"),
-                    _buildExtracurricularCard("Futsal", "assets/images/futsal.jpg"),
+                    _buildExtracurricularCard("Basket", "assets/images/basket.jpg", Basket(),context),
+                    _buildExtracurricularCard("Voli", "assets/images/voli.jpg",Voli(),context),
+                    _buildExtracurricularCard("PMR", "assets/images/pmr.jpg", PMR(),context),
+                    _buildExtracurricularCard("Paduan Suara", "assets/images/padus.jpg", PaduanSuara(),context),
+                    _buildExtracurricularCard("Paskibra", "assets/images/paskibra.jpg", Paskibra(),context),
+                    _buildExtracurricularCard("Audio Sound", "assets/images/audio-sound.jpg", AudioSound(),context),
+                    _buildExtracurricularCard("Futsal", "assets/images/futsal.jpg", Futsal(),context),
                   ],
                 ),
               ),
@@ -233,13 +249,20 @@ class DashboardUser extends StatelessWidget {
     );
   }
 
-  Widget _buildExtracurricularCard(String title, String imagePath) {
+  Widget _buildExtracurricularCard(String title, String imagePath,Widget page, BuildContext context) {
     return Card(
       elevation: 4,
       margin: EdgeInsets.symmetric(horizontal: 8),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
+       child: InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page), 
+        );
+      },
       child: Container(
         width: 200,
         child: Column(
@@ -266,6 +289,7 @@ class DashboardUser extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ),
+  );
   }
 }

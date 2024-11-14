@@ -4,12 +4,11 @@ import 'package:my_app/screens/preview.dart';
 class Basket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Mengambil ukuran layar untuk membuat tampilan responsif
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         elevation: 4,
         centerTitle: false,
@@ -26,7 +25,7 @@ class Basket extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 20,
-            color: Color(0xffffffff),
+            color: Color.fromARGB(255, 255, 255, 255),
           ),
         ),
         leading: IconButton(
@@ -58,7 +57,7 @@ class Basket extends StatelessWidget {
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 7,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: Offset(0, 3), 
                     ),
                   ],
                 ),
@@ -71,7 +70,7 @@ class Basket extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              // Text judul yang lebih besar dan menarik
+             
               Text(
                 "Basket",
                 textAlign: TextAlign.center,
